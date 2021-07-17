@@ -5,4 +5,8 @@
     <string name="date">Date</string>
     <string name="task_title">Task Title</string>
     <string name="title_toolbar">Create your Task</string>
+    <string name="description_new_task">New Task</string>
+    <string name="task_01">Task 01</string>
+    <string name="time_01">time_01</string>
+    <string name="time_02">1:20</string>
 </resources>

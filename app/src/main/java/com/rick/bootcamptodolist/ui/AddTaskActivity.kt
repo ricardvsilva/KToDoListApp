@@ -28,6 +28,7 @@ class AddTaskActivity : AppCompatActivity(){
     }
 
     private fun insertListeners(){
+
         binding.startDate.editText?.setOnClickListener {
             var datePicker = MaterialDatePicker.Builder.datePicker().build()
             datePicker.addOnPositiveButtonClickListener {
@@ -55,9 +56,13 @@ class AddTaskActivity : AppCompatActivity(){
         }
 
         binding.btnCreateTask.setOnClickListener {
-            val task = Task(title= binding.edtTask.text.toString(),date=binding.startDate.text,hour=binding.startHour.text)
+            val task = Task(
+                title= binding.edtTask.text.toString(),
+                date=binding.startDate.text,
+                hour=binding.startHour.text
+            )
             TaskDataSource.insertTask(task)
-            Log.e("TAG", " inserted Listeners " + TaskDataSource.getList())
+            finish()
         }
 
         binding.btnCancelar.setOnClickListener {
