@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BootCampToDoList</string>
+    <string name="create_task">Create TASK</string>
+    <string name="hour">Hour</string>
+    <string name="date">Date</string>
+    <string name="task_title">Task Title</string>
+    <string name="title_toolbar">Create your Task</string>
+</resources>
