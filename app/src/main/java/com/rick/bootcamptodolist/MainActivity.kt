@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.rick.bootcamptodolist.databinding.ActivityAddTaskBinding
 import com.rick.bootcamptodolist.databinding.ActivityMainBinding
+import com.rick.bootcamptodolist.datasource.TaskDataSource
 import com.rick.bootcamptodolist.ui.AddTaskActivity
 import com.rick.bootcamptodolist.ui.TaskListAdapter
 
@@ -27,7 +28,26 @@ class MainActivity : AppCompatActivity() {
 
     private fun insertListeners() {
         binding.fab.setOnClickListener {
-            startActivity(Intent(this, AddTaskActivity::class.java))
+            startActivityForResult(Intent(this, AddTaskActivity::class.java), CREATE_NEW_TASK)
         }
+
+        adapter.listenerEdit = {}
+        adapter.listenerDelete = {}
+
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode == CREATE_NEW_TASK){
+            binding.rvTasks.adapter = adapter
+            adapter.submitList(TaskDataSource.getList())
+        }
+
+    }
+
+    companion object{
+
+        private const val CREATE_NEW_TASK = 1080
+
     }
 }

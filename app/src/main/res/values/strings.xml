@@ -9,4 +9,7 @@
     <string name="task_01">Task 01</string>
     <string name="time_01">time_01</string>
     <string name="time_02">1:20</string>
+    <string name="Edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="dotsMore">DotsMeaningMore</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.rick.bootcamptodolist.ui
 
+import android.app.Activity
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -30,7 +31,7 @@ class AddTaskActivity : AppCompatActivity(){
     private fun insertListeners(){
 
         binding.startDate.editText?.setOnClickListener {
-            var datePicker = MaterialDatePicker.Builder.datePicker().build()
+            val datePicker = MaterialDatePicker.Builder.datePicker().build()
             datePicker.addOnPositiveButtonClickListener {
                 val timeZone = TimeZone.getDefault()
                 val offset = timeZone.getOffset(Date().time) * -1
@@ -41,7 +42,7 @@ class AddTaskActivity : AppCompatActivity(){
 
         binding.startHour.editText?.setOnClickListener {
 
-            var timerPicker = MaterialTimePicker.Builder()
+            val timerPicker = MaterialTimePicker.Builder()
                 .setTimeFormat(TimeFormat.CLOCK_24H)
                 .build()
 
@@ -62,6 +63,7 @@ class AddTaskActivity : AppCompatActivity(){
                 hour=binding.startHour.text
             )
             TaskDataSource.insertTask(task)
+            setResult(Activity.RESULT_OK)
             finish()
         }
 
