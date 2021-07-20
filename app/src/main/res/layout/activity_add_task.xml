@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -47,25 +48,27 @@
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Description Paused
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/description_box"
         android:layout_width="0dp"
         android:layout_height="128dp"
         android:layout_marginTop="64dp"
-        android:hint="Task Title"
+        android:hint="@string/lb_description"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:layout_constraintStart_toStartOf="@id/guide_start"
         app:layout_constraintEnd_toEndOf="@id/guide_end"
-        app:layout_constraintTop_toBottomOf="@id/title_box">
+        app:layout_constraintTop_toBottomOf="@id/til_date">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
+            android:maxLines="5"
+            android:textSize="16sp"
             android:inputType="textMultiLine"
             android:layout_height="wrap_content"/>
 
     </com.google.android.material.textfield.TextInputLayout>
-    -->
+
     <!-- DATE START -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_date"

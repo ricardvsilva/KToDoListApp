@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object {
-        private const val CREATE_NEW_TASK = 1000
+        private const val CREATE_NEW_TASK = 1080
     }
 
 }

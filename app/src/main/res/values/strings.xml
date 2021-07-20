@@ -16,4 +16,5 @@
     <string name="image_lazy">Image lazy</string>
     <string name="TaskToday">Tasks Today</string>
     <string name="image_days">Image Days</string>
+    <string name="lb_description">Description</string>
 </resources>
