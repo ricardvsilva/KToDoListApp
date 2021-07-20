@@ -30,7 +30,7 @@
 
     <!-- INPUT DE TEXTO -->
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/title_box"
+        android:id="@+id/til_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -68,7 +68,7 @@
     -->
     <!-- DATE START -->
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/start_date"
+        android:id="@+id/til_date"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -77,8 +77,8 @@
         app:startIconDrawable="@drawable/ic_calendar"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:layout_constraintStart_toStartOf="@id/guide_start"
-        app:layout_constraintEnd_toStartOf="@id/start_Hour"
-        app:layout_constraintTop_toBottomOf="@id/title_box">
+        app:layout_constraintEnd_toStartOf="@id/til_hour"
+        app:layout_constraintTop_toBottomOf="@id/til_title">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/btn_set_date"
@@ -90,7 +90,7 @@
 
     <!-- HOUR START -->
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/start_Hour"
+        android:id="@+id/til_hour"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -98,9 +98,9 @@
         android:hint="@string/hour"
         app:startIconDrawable="@drawable/ic_timer"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:layout_constraintStart_toEndOf="@id/start_date"
+        app:layout_constraintStart_toEndOf="@id/til_date"
         app:layout_constraintEnd_toEndOf="@id/guide_end"
-        app:layout_constraintTop_toBottomOf="@id/title_box">
+        app:layout_constraintTop_toBottomOf="@id/til_title">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/btn_set_time"

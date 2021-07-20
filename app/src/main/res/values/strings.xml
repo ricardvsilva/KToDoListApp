@@ -12,4 +12,8 @@
     <string name="Edit">Edit</string>
     <string name="delete">Delete</string>
     <string name="dotsMore">DotsMeaningMore</string>
+    <string name="lb_anyTask">MAAANO, VOCÊ TEM TAREFAS HOJE !</string>
+    <string name="image_lazy">Image lazy</string>
+    <string name="TaskToday">Tasks Today</string>
+    <string name="image_days">Image Days</string>
 </resources>

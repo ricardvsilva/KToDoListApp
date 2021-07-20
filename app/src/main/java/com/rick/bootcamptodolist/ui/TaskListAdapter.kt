@@ -11,38 +11,10 @@ import com.rick.bootcamptodolist.R
 import com.rick.bootcamptodolist.databinding.ItemTaskBinding
 import com.rick.bootcamptodolist.model.Task
 
-class TaskListAdapter:ListAdapter<Task, TaskListAdapter.TaskViewHolder>(DiffCallBack()){
+class TaskListAdapter : ListAdapter<Task, TaskListAdapter.TaskViewHolder>(DiffCallback()) {
 
     var listenerEdit : (Task) -> Unit = {}
     var listenerDelete : (Task) -> Unit = {}
-
-    inner class TaskViewHolder(private val binding:ItemTaskBinding
-    ) : RecyclerView.ViewHolder(binding.root){
-
-        @SuppressLint("SetTextI18n")
-        fun bind(item: Task) {
-            binding.tvTitleTask.text = item.title
-            binding.tvTimeTask.text = "${item.date} ${item.hour}"
-            binding.ivMore.setOnClickListener {
-                showPoupup(item)
-            }
-        }
-
-        private fun showPoupup(item: Task) {
-            val ivMore = binding.ivMore
-            val popupMenu = PopupMenu(ivMore.context, ivMore)
-            popupMenu.menuInflater.inflate(R.menu.popup_menu, popupMenu.menu)
-            popupMenu.setOnMenuItemClickListener {
-                when(it.itemId){
-                    R.id.action_edit -> listenerEdit(item)
-                    R.id.action_delete -> listenerDelete(item)
-                }
-                return@setOnMenuItemClickListener true
-            }
-            popupMenu.show()
-        }
-
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -53,10 +25,37 @@ class TaskListAdapter:ListAdapter<Task, TaskListAdapter.TaskViewHolder>(DiffCall
     override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
+
+    inner class TaskViewHolder(
+        private val binding: ItemTaskBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
+
+        @SuppressLint("SetTextI18n")
+        fun bind(item: Task) {
+            binding.tvTitle.text = item.title
+            binding.tvDate.text = "${item.date} ${item.hour}"
+            binding.ivMore.setOnClickListener {
+                showPopup(item)
+            }
+        }
+
+        private fun showPopup(item: Task) {
+            val ivMore = binding.ivMore
+            val popupMenu = PopupMenu(ivMore.context, ivMore)
+            popupMenu.menuInflater.inflate(R.menu.popup_menu, popupMenu.menu)
+            popupMenu.setOnMenuItemClickListener {
+                when (it.itemId) {
+                    R.id.action_edit -> listenerEdit(item)
+                    R.id.action_delete -> listenerDelete(item)
+                }
+                return@setOnMenuItemClickListener true
+            }
+            popupMenu.show()
+        }
+    }
 }
 
-class DiffCallBack : DiffUtil.ItemCallback<Task>(){
-
+class DiffCallback : DiffUtil.ItemCallback<Task>() {
     override fun areItemsTheSame(oldItem: Task, newItem: Task) = oldItem == newItem
     override fun areContentsTheSame(oldItem: Task, newItem: Task) = oldItem.id == newItem.id
 }

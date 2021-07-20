@@ -7,7 +7,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
-        android:id="@+id/tv_titleTask"
+        android:id="@+id/tv_title"
         android:text="@string/task_01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,14 +18,14 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
-        android:id="@+id/tv_timeTask"
+        android:id="@+id/tv_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="15sp"
         android:textColor="@color/black"
         tools:text="01/10/2021 03:50"
-        app:layout_constraintStart_toStartOf="@id/tv_titleTask"
-        app:layout_constraintTop_toBottomOf="@id/tv_titleTask"/>
+        app:layout_constraintStart_toStartOf="@id/tv_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"/>
     
     <ImageView
         android:id="@+id/iv_more"
