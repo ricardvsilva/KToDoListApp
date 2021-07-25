@@ -10,9 +10,9 @@
         android:id="@+id/tlb_createtask"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:title="@string/title_toolbar"
+        app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/ic_navigate_back"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:title="@string/title_toolbar" />
 
     <!-- LINHAS GUIA -->
     <androidx.constraintlayout.widget.Guideline
